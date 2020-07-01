@@ -1,7 +1,7 @@
 # Set the base image
 FROM ubuntu:trusty
-# Dockerfile author / maintainer 
-MAINTAINER Ashish <ashishranjan2912@gmail.com> 
+# Dockerfile author / maintainer
+MAINTAINER Ashish <ashishranjan2912@gmail.com>
 
 # Update the default application repository sources list
 RUN apt-get update && apt-get -y upgrade && apt-get install -y \
@@ -22,7 +22,7 @@ RUN apt-get install -y nodejs
 RUN apt-get install software-properties-common -y
 RUN apt-add-repository ppa:brightbox/ruby-ng -y
 RUN apt-get update
-RUN apt-get install ruby2.4 ruby2.4-dev -y
+RUN apt-get install ruby2.6 ruby2.6-dev -y
 
 # install chromedriver & xvfb (for headless chrome)
 RUN apt-get install -y xvfb
