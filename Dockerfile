@@ -9,6 +9,9 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y \
   build-essential python python-dev ruby ruby-dev \
   curl git libxml2 libxml2-dev libxslt1-dev libfreetype6-dev && apt-get clean
 
+RUN pip install -U pip
+RUN pip install virtualenv --ignore-installed
+
 # deps for selenium
 RUN apt-get install -y openjdk-7-jdk
 RUN apt-get install -y libxi6 libgconf-2-4
@@ -28,4 +31,3 @@ RUN apt-get install ruby2.6 ruby2.6-dev -y
 RUN apt-get install -y xvfb
 RUN apt-get install -y chromium-chromedriver
 RUN ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
-# RUN pip install virtualenv
